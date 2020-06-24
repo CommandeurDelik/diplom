@@ -25,9 +25,16 @@ const ProjectBoardList = ({ status, project, filters, currentUserId }) => {
   const filteredListIssues = getSortedListIssues(filteredIssues, status);
   const allListIssues = getSortedListIssues(project.issues, status);
 
+  const checkUser = (project) => {
+    const is = project.users.filter(user => user.id === currentUserId)
+    console.log('checked user id', project)
+    return is.length ? true : false
+  }
+
   return (
     <Droppable key={status} droppableId={status}>
       {provided => (
+
         <List>
           <Title>
             {`${IssueStatusCopy[status]} `}

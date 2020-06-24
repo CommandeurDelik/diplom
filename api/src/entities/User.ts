@@ -33,6 +33,9 @@ class User extends BaseEntity {
   @Column('varchar', { length: 2000, nullable: true })
   avatarUrl: string;
 
+  @Column('varchar', { length: 2000, nullable: true })
+  password: string;
+
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 

@@ -34,6 +34,8 @@ const ProjectBoardLists = ({ project, filters, updateLocalProjectIssues }) => {
     });
   };
 
+
+
   return (
     <DragDropContext onDragEnd={handleIssueDrop}>
       <Lists>

@@ -4,9 +4,9 @@ import { Button } from 'shared/components';
 
 import { Header, BoardName } from './Styles';
 
-const ProjectBoardHeader = () => (
+const ProjectBoardHeader = (props) => (
   <Header>
-    <BoardName>Доска</BoardName>
+    <BoardName>{props.title ? props.title : "Доска" }</BoardName>
     <a href="https://github.com/oldboyxx/jira_clone" target="_blank" rel="noreferrer noopener">
       <Button icon="github">Исходники проекта</Button>
     </a>

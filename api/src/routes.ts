@@ -12,7 +12,7 @@ export const attachPublicRoutes = (app: any): void => {
   }
 
   app.post('/register', authentication.register);
-  app.post('/login', authentication.register);
+  app.post('/login', authentication.login);
 
   app.post('/authentication/guest', authentication.createGuestAccount);
 };

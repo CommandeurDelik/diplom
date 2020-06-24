@@ -2,30 +2,34 @@ import { Comment, Issue, Project, User } from 'entities';
 import { ProjectCategory } from 'constants/projects';
 import { IssueType, IssueStatus, IssuePriority } from 'constants/issues';
 import { createEntity } from 'utils/typeorm';
+import { generateString } from '../utils/Random';
 
 const seedUsers = (): Promise<User[]> => {
   const users = [
     createEntity(User, {
       email: 'rick@jira.guest',
       name: 'Pickle Rick',
+      password: generateString(50),
       avatarUrl: 'https://i.ibb.co/7JM1P2r/picke-rick.jpg',
     }),
     createEntity(User, {
       email: 'yoda@jira.guest',
       name: 'Baby Yoda',
+      password: generateString(50),
       avatarUrl: 'https://i.ibb.co/6n0hLML/baby-yoda.jpg',
     }),
 
     createEntity(User, {
       email: 'gaben@jira.guest',
       name: 'Lord Gaben',
+      password: generateString(50),
       avatarUrl: 'https://i.ibb.co/6RJ5hq6/gaben.jpg',
     }),
-
 
     createEntity(User, {
       email: 'adel@jira.guest',
       name: 'Adel Gilmutdinov',
+      password: generateString(50),
       avatarUrl: 'https://i.ibb.co/FBbmLjF/fe5f91d40cd7.jpg',
     }),
   ];

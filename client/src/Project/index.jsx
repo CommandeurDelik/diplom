@@ -12,6 +12,7 @@ import Board from './Board';
 import IssueSearch from './IssueSearch';
 import IssueCreate from './IssueCreate';
 import ProjectSettings from './ProjectSettings';
+import ReportPage from './Board/reportPage'
 import { ProjectPage } from './Styles';
 
 const Project = () => {
@@ -86,6 +87,17 @@ const Project = () => {
           />
         )}
       />
+
+        <Route
+            path={`${match.path}/report`}
+            render={() => (
+                <ReportPage
+                    project={project}
+                    fetchProject={fetchProject}
+                    updateLocalProjectIssues={updateLocalProjectIssues}
+                />
+            )}
+        />
 
       <Route
         path={`${match.path}/settings`}

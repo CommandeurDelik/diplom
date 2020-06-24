@@ -10,6 +10,11 @@ const propTypes = {
   issueCreateModalOpen: PropTypes.func.isRequired,
 };
 
+const UserExit =  () => {
+    localStorage.clear()
+    window.location.href = '/'
+}
+
 const ProjectNavbarLeft = ({ issueSearchModalOpen, issueCreateModalOpen }) => (
   <NavLeft>
     <LogoLink to="/">
@@ -26,17 +31,15 @@ const ProjectNavbarLeft = ({ issueSearchModalOpen, issueCreateModalOpen }) => (
       <ItemText>Создать задачу</ItemText>
     </Item>
 
-    <Bottom>
-      <AboutTooltip
-        placement="right"
-        offset={{ top: -218 }}
-        renderLink={linkProps => (
-          <Item {...linkProps}>
+        <Item onClick={() => UserExit()}>
             <Icon type="help" size={25} />
-            <ItemText>Профиль</ItemText>
-          </Item>
-        )}
-      />
+            <ItemText>Новый сотрудник</ItemText>
+        </Item>
+      <Bottom>
+        <Item onClick={() => UserExit()}>
+            <Icon type="help" size={25} />
+            <ItemText>Выйти</ItemText>
+        </Item>
     </Bottom>
   </NavLeft>
 );

@@ -42,11 +42,9 @@ const ProjectSidebar = ({ project }) => {
 
       {renderLinkItem(match, 'Доска', 'board', '/board')}
       {renderLinkItem(match, 'Настройка проекта', 'settings', '/settings')}
+      {renderLinkItem(match, 'Отчеты', 'reports', '/report')}
       <Divider />
-      {renderLinkItem(match, 'Готовы', 'issues')}
-      {renderLinkItem(match, 'Страницы', 'page')}
-      {renderLinkItem(match, 'Отчеты', 'reports')}
-      {renderLinkItem(match, 'Компоненты', 'component')}
+      {renderLinkItem(match, 'Профиль', 'issues')}
     </Sidebar>
   );
 };
@@ -62,7 +60,7 @@ const renderLinkItem = (match, text, iconType, path) => {
     <LinkItem {...linkItemProps}>
       <Icon type={iconType} />
       <LinkText>{text}</LinkText>
-      {!isImplemented && <NotImplemented>Not implemented</NotImplemented>}
+      {!isImplemented && <NotImplemented>Не реализована</NotImplemented>}
     </LinkItem>
   );
 };

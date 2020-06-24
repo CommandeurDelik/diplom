@@ -10,6 +10,7 @@ import Filters from './Filters';
 import Lists from './Lists';
 import IssueDetails from './IssueDetails';
 
+
 const propTypes = {
   project: PropTypes.object.isRequired,
   fetchProject: PropTypes.func.isRequired,
@@ -28,6 +29,7 @@ const ProjectBoard = ({ project, fetchProject, updateLocalProjectIssues }) => {
   const history = useHistory();
 
   const [filters, mergeFilters] = useMergeState(defaultFilters);
+
 
   return (
     <Fragment>
