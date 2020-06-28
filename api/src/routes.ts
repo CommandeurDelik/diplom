@@ -4,6 +4,7 @@ import * as issues from 'controllers/issues';
 import * as projects from 'controllers/projects';
 import * as test from 'controllers/test';
 import * as users from 'controllers/users';
+import * as reports from 'controllers/reports';
 
 export const attachPublicRoutes = (app: any): void => {
   if (process.env.NODE_ENV === 'test') {
@@ -27,6 +28,10 @@ export const attachPrivateRoutes = (app: any): void => {
   app.post('/issues', issues.create);
   app.put('/issues/:issueId', issues.update);
   app.delete('/issues/:issueId', issues.remove);
+
+  app.get('/reports', reports.getProjectReports);
+  app.post('/reports', reports.create);
+  app.delete('/reports', reports.remove);
 
   app.get('/project', projects.getProjectWithUsersAndIssues);
   app.put('/project', projects.update);

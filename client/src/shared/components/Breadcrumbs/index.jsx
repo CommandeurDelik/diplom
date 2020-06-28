@@ -10,7 +10,7 @@ const propTypes = {
 const Breadcrumbs = ({ items }) => (
   <Container>
     {items.map((item, index) => (
-      <Fragment key={item}>
+      <Fragment key={index}>
         {index !== 0 && <Divider>/</Divider>}
         {item}
       </Fragment>

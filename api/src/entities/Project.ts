@@ -10,7 +10,7 @@ import {
 
 import is from 'utils/validation';
 import { ProjectCategory } from 'constants/projects';
-import { Issue, User } from '.';
+import { Issue, Report, User } from '.';
 
 @Entity()
 class Project extends BaseEntity {
@@ -41,8 +41,6 @@ class Project extends BaseEntity {
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 
-
-
   @OneToMany(
     () => Issue,
     issue => issue.project,
@@ -54,6 +52,12 @@ class Project extends BaseEntity {
     user => user.project,
   )
   users: User[];
+
+  @OneToMany(
+    () => Report,
+    report => report.project,
+  )
+  reports: Report[];
 }
 
 export default Project;
